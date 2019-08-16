@@ -1,0 +1,13 @@
+type Query {
+    findAllBorrowers: [Borrower]!
+    countBorrowers: Long!
+}
+
+type Borrower {
+    id: ID!
+    name: String!
+}
+
+type Mutation {
+    newBorrower(name: String!) : Borrower!
+}

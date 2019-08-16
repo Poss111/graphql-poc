@@ -1,0 +1,16 @@
+type Mortgage {
+    id: ID!
+    type: String!
+    borrower: Borrower!
+}
+
+extend type Query {
+    findAllMortgages: [Mortgage]!
+    countMortgages: Long!
+}
+
+extend type Mutation {
+    newMortgage(type: String!, borrower: ID!) : Mortgage!
+    deleteMortgage(id: ID!) : Boolean
+    updateMortgage(type: String!, id: ID!) : Mortgage!
+}
